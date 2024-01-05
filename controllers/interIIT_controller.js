@@ -30,7 +30,7 @@ const addOneItem = async(req, res) => {
     const newListEntry = new interIIT(req.body);
     try {
         const savedListEntry = await newListEntry.save();
-        res.redirect("/add-user");
+        res.redirect("/interIIT/add-user");
     } catch (err) {
         res.status(400).json({ error: 'Error: ' + err });
     }

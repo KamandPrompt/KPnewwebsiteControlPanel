@@ -1,7 +1,7 @@
 const axios=require("axios");
 
 exports.homeRoutes=(req,res)=>{
-    axios.get("http://localhost:5000/interIIT/api/getAllItems")
+    axios.get("http://localhost:9000/interIIT/api/getAllItems")
     .then(function(response){
         res.render('index', { users : response.data });
     })
@@ -16,7 +16,7 @@ exports.add_user=(req,res)=>{
 
 exports.update_user=(req,res)=>{
     const userId = req.query.id;
-    axios.get(`http://localhost:5000/interIIT/api/getByID/${userId}`)
+    axios.get(`http://localhost:9000/interIIT/api/getByID/${userId}`)
         .then(function(userdata){
             res.render("update_user", { user : userdata.data})
         })

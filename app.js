@@ -4,7 +4,8 @@ const path = require("path");
 
 const connectDB = require("./config/db");
 const dotenv = require("dotenv");
-
+const morgan=require("morgan");
+const bodyparser=require("body-parser")
 const viewsRouter = require("./routes/viewsRoutes");
 const blogsRouter = require("./routes/blogsRoutes");
 const projectsRouter = require("./routes/projectsRoutes");
@@ -33,6 +34,8 @@ app.set("views", path.join(__dirname, "views"));
 app.set('views', path.join(__dirname, 'views', 'interIITviews'));
 
 // SERVING STATIC FILES
+app.use(morgan(`tiny`));
+app.use(bodyparser.urlencoded({extended:true}));
 app.use(express.static(`${__dirname}/public`));
 app.use("/css",express.static(path.resolve(__dirname,"assets/CSS")))
 app.use("/interIIT/css",express.static(path.resolve(__dirname,"assets/CSS")))

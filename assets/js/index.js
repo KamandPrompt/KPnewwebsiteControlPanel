@@ -14,7 +14,7 @@ $("#update_user").submit(function(event){
 
 
     var request = {
-        "url" : `http://localhost:5000/interIIT/api/updateByID/${data.id}`,
+        "url" : `http://localhost:9000/interIIT/api/updateByID/${data.id}`,
         "method" : "PUT",
         "data" : data
     }
@@ -32,7 +32,7 @@ if(window.location.pathname == "/interIIT"){
         var id = $(this).attr("data-id")
 
         var request = {
-            "url" : `http://localhost:5000/interIIT/api/deleteOneItem/${id}`,
+            "url" : `http://localhost:9000/interIIT/api/deleteOneItem/${id}`,
             "method" : "DELETE"
         }
 
