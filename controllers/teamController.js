@@ -18,7 +18,7 @@ exports.addUser=async(req,res)=>{
         res.status(200).json({save});
     }
     catch(error){
-        console.error(error.message);
+        console.error("error");
         res.status(500).json({msg:error.message});
     }
 }
